@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name: consul-config-client
-        image: 192.168.31.200:30050/consul-config-client:0.2
+        image: 192.168.31.200:30050/consul-config-client:0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 9101
@@ -67,7 +67,7 @@ spec:
     spec:
       containers:
       - name: consul-user-service
-        image: 192.168.31.200:30050/consul-user-service:0.2
+        image: 192.168.31.200:30050/consul-user-service:0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 8206
@@ -97,7 +97,7 @@ spec:
     spec:
       containers:
       - name: consul-ribbon-service
-        image: 192.168.31.200:30050/consul-ribbon-service:0.2
+        image: 192.168.31.200:30050/consul-ribbon-service:0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 8308
