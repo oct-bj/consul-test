@@ -12,7 +12,7 @@ services:
 
   consul-ribbon-service:
     build: consul-ribbon-service
-    image: 192.168.31.200:30050/consul-ribbon-service:0.1
+    image: 192.168.31.200:30050/consul-ribbon-service:0.2
     restart: always
     ports:
       - 8308:8308
@@ -21,10 +21,10 @@ services:
 
   consul-user-service:
     build: consul-user-service
-    image: 192.168.31.200:30050/consul-user-service:0.1
+    image: 192.168.31.200:30050/consul-user-service:0.2
     restart: always
     ports:
-      - 8080:8080
+      - 8206:8206
     networks:
       - my-network
 
