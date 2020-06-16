@@ -7,16 +7,12 @@
 	<parent>
 		<groupId>com.shunfenger-tech</groupId>
 		<artifactId>consul-test</artifactId>
-		<version>0.1</version>
+		<version>${app.version}</version>
 	</parent>
 	
 	<artifactId>consul-user-service</artifactId>
 	<name>consul-user-service</name>
-	
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>	
-	
+		
     <build>
         <plugins>
             <plugin>
@@ -25,11 +21,12 @@
             </plugin>
         </plugins>
     </build>	
+    
     <dependencies>
     	<dependency>
     		<groupId>com.shunfenger-tech</groupId>
     		<artifactId>consul-common</artifactId>
-    		<version>0.1</version>
+    		<version>${app.version}</version>
     	</dependency>
     </dependencies>
 </project>

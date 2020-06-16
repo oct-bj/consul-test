@@ -2,7 +2,7 @@ FROM java:8-jre
 
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
-ADD ./target/consul-user-service-0.1.jar /app/
-CMD ["java", "-Xmx200m", "-jar", "/consul-user-service-0.1.jar"]
+ADD ./target/consul-user-service-0.2.jar /app/
+CMD ["java", "-Xmx200m", "-jar", "/consul-user-service-0.2.jar"]
 
-EXPOSE 16114
+EXPOSE 8206

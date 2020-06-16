@@ -3,10 +3,10 @@ version: '3'
 services:
   consul-config-client:
     build: consul-config-client
-    image: 192.168.31.200:30050/consul-config-client:0.1
+    image: 192.168.31.200:30050/consul-config-client:0.2
     restart: always
     ports:
-      - 8080:8080
+      - 9101:9101
     networks:
       - my-network
 
@@ -15,7 +15,7 @@ services:
     image: 192.168.31.200:30050/consul-ribbon-service:0.1
     restart: always
     ports:
-      - 8080:8080
+      - 8308:8308
     networks:
       - my-network  
 

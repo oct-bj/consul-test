@@ -12,12 +12,14 @@
 	
 	<groupId>com.shunfenger-tech</groupId>
 	<artifactId>consul-test</artifactId>
-	<version>0.1</version>
+	<version>${app.version}</version>
 	<packaging>pom</packaging>
 	<name>consul-test</name>
 	
 	<properties>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <java.version>1.8</java.version>
+        <app.version>0.2</app.version>
     </properties>
 	
     <dependencies>

@@ -5,8 +5,8 @@ spring:
     name: consul-config-client
   cloud:
     consul:
-      host: localhost
-      port: 8500
+      host: 192.168.31.200
+      port: 30083
       discovery:
         serviceName: consul-config-client
       config:
