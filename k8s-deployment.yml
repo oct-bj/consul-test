@@ -24,11 +24,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: consul-config-client-deploy
+  namespace: consul-test  
 spec:
   selector:
     matchLabels:
       app: consul-config-client
-      namespace: consul-test
   replicas: 1
   template:
     metadata:
@@ -37,13 +37,76 @@ spec:
     spec:
       containers:
       - name: consul-config-client
-        image: 192.168.31.200:30050/consul-config-client:0.1
+        image: 192.168.31.200:30050/consul-config-client:0.2
         imagePullPolicy: Always
         ports:
-        - containerPort: 18767
+        - containerPort: 9101
         readinessProbe:
           tcpSocket:
-            port: 18767
+            port: 9101
           initialDelaySeconds: 160
           periodSeconds: 10
           timeoutSeconds: 5   
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consul-user-service-deploy
+  namespace: consul-test  
+spec:
+  selector:
+    matchLabels:
+      app: consul-user-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: consul-user-service
+    spec:
+      containers:
+      - name: consul-user-service
+        image: 192.168.31.200:30050/consul-user-service:0.2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8206
+        readinessProbe:
+          tcpSocket:
+            port: 8206
+          initialDelaySeconds: 160
+          periodSeconds: 10
+          timeoutSeconds: 5             
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consul-ribbon-service-deploy
+  namespace: consul-test  
+spec:
+  selector:
+    matchLabels:
+      app: consul-ribbon-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: consul-ribbon-service
+    spec:
+      containers:
+      - name: consul-ribbon-service
+        image: 192.168.31.200:30050/consul-ribbon-service:0.2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8308
+        readinessProbe:
+          tcpSocket:
+            port: 8308
+          initialDelaySeconds: 160
+          periodSeconds: 10
+          timeoutSeconds: 5 
+
+
+          
