@@ -13,8 +13,8 @@ spec:
   ports:
     - name: consul-port
       protocol: TCP
-      port: 8300
-      targetPort: 8300
+      port: 8500
+      targetPort: 8500
       nodePort: 30083
 
 ---
