@@ -22,4 +22,11 @@
         </plugins>
     </build>
 
+    <dependencies>
+    	<dependency>
+    		<groupId>com.shunfenger-tech</groupId>
+    		<artifactId>consul-common</artifactId>
+    		<version>${app.version}</version>
+    	</dependency>
+    </dependencies>
 </project>

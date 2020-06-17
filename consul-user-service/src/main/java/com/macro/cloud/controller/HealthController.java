@@ -16,8 +16,8 @@ public class HealthController {
 	private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/health")
-    public CommonResult<User> getHealthState() {
+    public CommonResult getHealthState() {
         LOGGER.info("收到Consul发过来的健康检查探针信息");
-        return new CommonResult<>();
+        return new CommonResult();
     }
 }
