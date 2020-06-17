@@ -9,5 +9,8 @@ spring:
       port: 30083
       discovery:
         service-name: ${spring.application.name}
+        prefer-ip-address: true
+        health-check-path: /actuator/health
+        health-check-interval: 10s
 service-url:
   consul-user-service: http://consul-user-service
